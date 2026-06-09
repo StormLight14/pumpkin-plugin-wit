@@ -1,13 +1,12 @@
 interface %world {
-use common.{position, entity-pose, block-pos};
-use block-entity.{block-entity, command-block-entity, block-entity-type};
-use text.{text-component};
-use scoreboard.{scoreboard};
-use particles.particle;
-use sounds.{sound, sound-category};
-use entity-types.entity-type;
-use biomes.biome;
-use uuid.uuid;
+    use common.{position, entity-pose, block-pos};
+    use block-entity.{block-entity, command-block-entity, block-entity-type};
+    use text.{text-component};
+    use scoreboard.{scoreboard};
+    use particles.{particle};
+    use sounds.{sound};
+    use entity-types.{entity-type};
+    use biomes.{biome};
 
     use uuid.{uuid};
 
@@ -457,12 +456,6 @@ use uuid.uuid;
 
         /// Returns a list of all entities in this world.
         get-entities: func() -> list<entity>;
-
-        /// Returns a list of entities within the specified radius of the position.
-        get-entities-in-radius: func(pos: position, radius: f64) -> list<entity>;
-
-        /// Returns the entity with the specified UUID, if it exists in this world.
-        get-entity-by-uuid: func(id: uuid) -> option<entity>;
 
         /// Returns the block entity at the specified position, if any.
         get-block-entity: func(pos: block-pos) -> option<block-entity-type>;
